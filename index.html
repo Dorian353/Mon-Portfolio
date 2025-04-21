@@ -1,0 +1,110 @@
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { BarChart3, BookUser, LayoutDashboard, LineChart } from "lucide-react";
+
+export default function TraderPortfolio() {
+  return (
+    <div className="p-6 max-w-6xl mx-auto space-y-8">
+      <h1 className="text-3xl font-bold">Profil de Trader - Anonyme</h1>
+
+      <Tabs defaultValue="overview">
+        <TabsList className="grid w-full grid-cols-4">
+          <TabsTrigger value="overview">
+            <LayoutDashboard className="mr-2 h-4 w-4" /> Vue d'ensemble
+          </TabsTrigger>
+          <TabsTrigger value="strategy">
+            <BookUser className="mr-2 h-4 w-4" /> Stratégie
+          </TabsTrigger>
+          <TabsTrigger value="performance">
+            <LineChart className="mr-2 h-4 w-4" /> Performances
+          </TabsTrigger>
+          <TabsTrigger value="setup">
+            <BarChart3 className="mr-2 h-4 w-4" /> Setups clés
+          </TabsTrigger>
+        </TabsList>
+
+        <TabsContent value="overview">
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <h2 className="text-xl font-semibold">Vue d'ensemble</h2>
+              <p>
+                Trader intraday directionnel avec exécution millimétrée sur M1/M5. 
+                Travail en top-down structurel D1 → H1 pour contextualisation, exécution en scalping maîtrisé.
+                Objectif : constance, risque calculé, et performance institutionnelle.
+              </p>
+              <p>
+                Style parfaitement compatible prop firm & hedge fund dynamique.
+              </p>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="strategy">
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <h2 className="text-xl font-semibold">Approche stratégique</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>Top-down multi-timeframe : D1 → H4 → H1 → M5 → M1</li>
+                <li>Contextualisation via FVG, blocs institutionnels, VP (HVN/LVN), trendlines</li>
+                <li>Exécution sur shift structurel, rejets précis, zones de liquidité</li>
+                <li>1 à 2 opportunités par jour, patience > volume</li>
+                <li>Gestion active : TP partiels, SL dynamique, BE dès TP1</li>
+              </ul>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="performance">
+          <Card>
+            <CardContent className="p-6">
+              <h2 className="text-xl font-semibold mb-4">Statistiques de performance</h2>
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="text-left border-b">
+                    <th className="py-2">Période</th>
+                    <th>Gain net</th>
+                    <th>Win rate</th>
+                    <th>RR moyen</th>
+                    <th>Max DD</th>
+                    <th>Sharpe</th>
+                    <th>Trades</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b">
+                    <td className="py-2">Jan - Mars 2025</td>
+                    <td>+15.3%</td>
+                    <td>58%</td>
+                    <td>2.4:1</td>
+                    <td>4.8%</td>
+                    <td>1.95</td>
+                    <td>63</td>
+                  </tr>
+                </tbody>
+              </table>
+            </CardContent>
+          </Card>
+        </TabsContent>
+
+        <TabsContent value="setup">
+          <Card>
+            <CardContent className="p-6 space-y-4">
+              <h2 className="text-xl font-semibold">Setups types</h2>
+              <ul className="list-disc list-inside space-y-2">
+                <li>🔹 Raid + Shift structure M1/M5 → entrée sur rejet / impulsion</li>
+                <li>🔹 Retest de FVG M5 après impulsion → continuation</li>
+                <li>🔹 Confluence VP (LVN) + prise de liquidité → entry sniper</li>
+              </ul>
+              <p className="text-muted-foreground text-sm">Visuels des setups en cours d'ajout (captures annotées prévues cette semaine)</p>
+            </CardContent>
+          </Card>
+        </TabsContent>
+      </Tabs>
+
+      <div className="text-center pt-4">
+        <Button variant="outline">Demander le journal complet / track record</Button>
+      </div>
+    </div>
+  );
+}
